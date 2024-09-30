@@ -1,0 +1,8 @@
+streamlit
+numpy==1.26.4
+pandas
+datetime
+joblib
+scikit-learn
+scipy
+catboost
