@@ -60,7 +60,7 @@ if st.button('Run Prediction Model'):
         fa = float(fa)
         adl = float(adl)
         mmse = float(mmse)
-        
+
         # Check if the values are within the predefined ranges
         if not (0 <= fa <= 10):
             st.error("Functional Assessment Score must be between 0 and 10.")
@@ -72,12 +72,12 @@ if st.button('Run Prediction Model'):
             input_data = np.array([[fa, adl, mmse, mc, bp]])
 
             prediction = model.predict(input_data)
-            
+
             if prediction[0] == 1:
-                st.success("Positive Alzheimer's diagnosis likely.")
+                st.error("Positive Alzheimer's diagnosis likely.")
             else:
-                st.error("Negative Alzheimer's diagnosis likely.")
-    
+                st.success("Negative Alzheimer's diagnosis likely.")
+
     except ValueError:
         st.error("Please ensure that all inputs are numeric.")
 st.write("""
